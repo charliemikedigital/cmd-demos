@@ -1,0 +1,1971 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kingdom Plumbing | Licensed Plumbers in Cypress, TX | (346) 513-0959</title>
+<meta name="description" content="Kingdom Plumbing serves Cypress, TX with fast, honest plumbing. Faucet, water heater, leak detection, pipe and toilet repair. Licensed and insured. Call (346) 513-0959." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@500;700&display=swap"
+  rel="stylesheet"
+/>
+<meta name="theme-color" content="#0a1220" />
+<style>
+  /* =====================================================================
+     DESIGN SYSTEM. Kingdom Plumbing
+     Dark premium navy with amber accents. Inspired by trades editorial.
+     ===================================================================== */
+  :root {
+    --ink: #0a1220;
+    --ink-2: #0d1828;
+    --ink-3: #11203a;
+    --surface: #142036;
+    --surface-2: #1a2a44;
+    --surface-3: #213354;
+    --border: #1f2d4a;
+    --border-bright: #2c3e63;
+
+    --paper: #f3ecdb;
+    --paper-mid: #c5beb1;
+    --paper-dim: #8c8675;
+    --paper-ghost: #5a5749;
+
+    --gold: #d4a849;
+    --gold-soft: #e7c478;
+    --gold-bright: #f5d98b;
+    --gold-deep: #9c7726;
+
+    --signal: #d8493a;
+    --signal-soft: #e16a5c;
+
+    --r-sm: 6px;
+    --r-md: 12px;
+    --r-lg: 20px;
+    --r-xl: 32px;
+
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 12px 32px -8px rgba(0, 0, 0, 0.55);
+    --shadow-lg: 0 28px 70px -20px rgba(0, 0, 0, 0.7);
+    --shadow-gold: 0 14px 40px -10px rgba(212, 168, 73, 0.35);
+    --shadow-signal: 0 14px 40px -10px rgba(216, 73, 58, 0.45);
+
+    --content-width: 1200px;
+  }
+
+  /* ============================================================== Reset */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--paper);
+    background: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse 70% 60% at 80% 0%, rgba(212, 168, 73, 0.06), transparent 60%),
+      radial-gradient(ellipse 50% 60% at 0% 80%, rgba(216, 73, 58, 0.04), transparent 65%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    background: var(--gold);
+    color: var(--ink);
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button {
+    font: inherit;
+    cursor: pointer;
+    border: 0;
+    background: none;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* ========================================================== Utilities */
+  .container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+  .serif-i {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+  .gold-text {
+    color: var(--gold-soft);
+  }
+  .gradient-gold {
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--gold-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Reveal on scroll. IntersectionObserver toggles .visible */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  /* =================================================== Emergency banner */
+  .banner {
+    background: linear-gradient(90deg, var(--signal) 0%, #b53a2e 50%, var(--signal) 100%);
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    z-index: 60;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  }
+  .banner-track {
+    display: flex;
+    width: max-content;
+    gap: 4rem;
+    animation: marquee 36s linear infinite;
+    will-change: transform;
+  }
+  .banner-track:hover {
+    animation-play-state: paused;
+  }
+  .banner-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    padding: 0 1rem;
+  }
+  .banner-item .dot {
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: var(--gold-bright);
+    box-shadow: 0 0 10px var(--gold-bright);
+    flex-shrink: 0;
+  }
+  .banner-item a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(255, 255, 255, 0.4);
+    transition: text-decoration-color 0.2s;
+  }
+  .banner-item a:hover {
+    text-decoration-color: #fff;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ================================================================ Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(10, 18, 32, 0.6);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-bottom: 1px solid transparent;
+    transition: background 0.35s, border-color 0.35s;
+  }
+  nav.scrolled {
+    background: rgba(10, 18, 32, 0.92);
+    border-bottom-color: var(--border);
+  }
+  .nav-inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--gold-deep));
+    color: var(--ink);
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: -0.03em;
+    box-shadow: 0 6px 18px -6px rgba(212, 168, 73, 0.55);
+    flex-shrink: 0;
+  }
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.18rem;
+    color: var(--paper);
+    letter-spacing: -0.01em;
+  }
+  .brand-sub {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--gold-soft);
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .nav-links {
+    display: none;
+    list-style: none;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .nav-links a {
+    padding: 0.5rem 0.95rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--paper-mid);
+    border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-links a:hover {
+    color: var(--paper);
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.7rem 1.1rem;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+    color: var(--ink);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: 0 10px 28px -8px rgba(212, 168, 73, 0.55);
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 36px -8px rgba(212, 168, 73, 0.7);
+  }
+  .nav-cta-num {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .nav-links {
+      display: flex;
+    }
+    .nav-cta-num {
+      display: inline;
+    }
+    .nav-cta-call {
+      display: none;
+    }
+  }
+
+  /* =============================================================== Hero */
+  .hero {
+    position: relative;
+    padding: 4rem 0 5rem;
+    overflow: hidden;
+  }
+  @media (min-width: 768px) {
+    .hero {
+      padding: 6rem 0 7rem;
+    }
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -180px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 168, 73, 0.18), transparent 65%);
+    filter: blur(40px);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(216, 73, 58, 0.08), transparent 65%);
+    filter: blur(40px);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1.1fr 1fr;
+      gap: 4rem;
+    }
+  }
+  .trust-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.4rem 0.9rem;
+    background: rgba(212, 168, 73, 0.08);
+    border: 1px solid rgba(212, 168, 73, 0.25);
+    border-radius: 999px;
+    color: var(--gold-soft);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+  }
+  .trust-pill .stars {
+    color: var(--gold-bright);
+    letter-spacing: 1px;
+  }
+  .trust-pill .sep {
+    color: var(--paper-ghost);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: var(--paper);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--signal-soft));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--paper-mid);
+    max-width: 540px;
+    margin-bottom: 2rem;
+  }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-bottom: 2.5rem;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 1rem 1.85rem;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+    color: var(--ink);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-gold);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.45) 50%, transparent 65%);
+    transform: translateX(-120%);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 50px -10px rgba(212, 168, 73, 0.5);
+  }
+  .btn-primary:hover::before {
+    transform: translateX(120%);
+  }
+  .btn-primary svg {
+    flex-shrink: 0;
+  }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.85rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-bright);
+    color: var(--paper);
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+  }
+  .btn-outline:hover {
+    border-color: var(--gold);
+    background: rgba(212, 168, 73, 0.08);
+    color: var(--gold-soft);
+  }
+  .trust-badges {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .trust-badges {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--paper-mid);
+  }
+  .badge svg {
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .hero-photo {
+    position: relative;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(10, 18, 32, 0.5));
+    pointer-events: none;
+  }
+  .hero-photo .photo-tag {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    z-index: 2;
+    background: rgba(10, 18, 32, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 168, 73, 0.2);
+    border-radius: 12px;
+    padding: 1rem 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+  .hero-photo .photo-tag .pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+    animation: pulse 1.8s infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+    }
+    70% {
+      box-shadow: 0 0 0 12px rgba(74, 222, 128, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+    }
+  }
+  .hero-photo .photo-tag-text {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--paper);
+  }
+  .hero-photo .photo-tag-text small {
+    display: block;
+    color: var(--paper-mid);
+    font-weight: 400;
+    font-size: 0.7rem;
+    margin-top: 2px;
+  }
+
+  /* =========================================================== Sections */
+  section {
+    padding: 5rem 0;
+    position: relative;
+  }
+  @media (min-width: 768px) {
+    section {
+      padding: 7rem 0;
+    }
+  }
+  .sec-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--gold-soft);
+    margin-bottom: 1.1rem;
+  }
+  .sec-eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.55;
+  }
+  .sec-h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+    margin-bottom: 1.25rem;
+    max-width: 22ch;
+  }
+  .sec-h2 em {
+    font-style: italic;
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .sec-sub {
+    color: var(--paper-mid);
+    font-size: 1rem;
+    line-height: 1.75;
+    max-width: 60ch;
+  }
+
+  /* ========================================================== Services */
+  #services {
+    background: linear-gradient(180deg, var(--ink), var(--ink-2));
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  @media (min-width: 600px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .service-card {
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 1.6rem 1.4rem;
+    transition: border-color 0.35s, transform 0.35s, box-shadow 0.35s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1.4rem;
+    right: 1.4rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 168, 73, 0.5), transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .service-card:hover {
+    border-color: rgba(212, 168, 73, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px -16px rgba(212, 168, 73, 0.25);
+  }
+  .service-card:hover::before {
+    transform: scaleX(1);
+  }
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(212, 168, 73, 0.08);
+    border: 1px solid rgba(212, 168, 73, 0.22);
+    display: grid;
+    place-items: center;
+    color: var(--gold-soft);
+    margin-bottom: 1.1rem;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .service-card:hover .service-icon {
+    transform: rotate(-4deg) scale(1.05);
+  }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--paper);
+    letter-spacing: -0.012em;
+    margin-bottom: 0.35rem;
+  }
+  .service-card p {
+    font-size: 0.85rem;
+    color: var(--paper-mid);
+    line-height: 1.55;
+  }
+
+  /* ============================================================ About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .about-grid {
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4.5rem;
+    }
+  }
+  .about-photo {
+    position: relative;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border: 1px solid var(--border);
+    max-width: 460px;
+    box-shadow: var(--shadow-lg);
+  }
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(10, 18, 32, 0.6));
+    pointer-events: none;
+  }
+  .about-photo .est {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    z-index: 2;
+    background: rgba(10, 18, 32, 0.72);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 168, 73, 0.25);
+    border-radius: 999px;
+    padding: 0.45rem 0.95rem;
+    color: var(--gold-soft);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .about-text p {
+    color: var(--paper-mid);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.1rem;
+  }
+  .about-text p:last-child {
+    margin-bottom: 0;
+  }
+  .about-text p em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold-soft);
+    font-weight: 500;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+    margin-top: 2rem;
+    padding: 1.5rem 1.25rem;
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+  }
+  .about-stat {
+    text-align: center;
+  }
+  .about-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.85rem;
+    color: var(--gold-soft);
+    line-height: 1;
+  }
+  .about-stat-label {
+    font-size: 0.7rem;
+    color: var(--paper-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 0.4rem;
+    font-weight: 600;
+  }
+
+  /* ========================================================= Reviews */
+  #reviews {
+    background: linear-gradient(180deg, var(--ink-2), var(--ink));
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .reviews-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    color: var(--paper-mid);
+    font-size: 0.92rem;
+  }
+  .reviews-meta .stars {
+    color: var(--gold-bright);
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+  }
+  .reviews-meta .num {
+    font-weight: 600;
+    color: var(--paper);
+  }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .reviews-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .review-card {
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 1.85rem 1.6rem;
+    position: relative;
+  }
+  .review-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1.6rem;
+    right: 1.6rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 168, 73, 0.3), transparent);
+  }
+  .review-stars {
+    color: var(--gold-bright);
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+  .review-quote {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 1.02rem;
+    color: var(--paper);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.005em;
+  }
+  .review-quote::before {
+    content: '\201C';
+    color: var(--gold);
+    font-size: 1.4em;
+    line-height: 0.5;
+    margin-right: 2px;
+  }
+  .review-quote::after {
+    content: '\201D';
+    color: var(--gold);
+    margin-left: 2px;
+  }
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .review-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+    color: var(--ink);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 0.92rem;
+    flex-shrink: 0;
+  }
+  .review-name {
+    font-weight: 600;
+    color: var(--paper);
+    font-size: 0.92rem;
+  }
+  .review-meta {
+    font-size: 0.7rem;
+    color: var(--paper-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    margin-top: 1px;
+  }
+
+  /* =================================================== Service area */
+  .area-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 768px) {
+    .area-grid {
+      grid-template-columns: 1.4fr 1fr;
+      gap: 3rem;
+    }
+  }
+  .area-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    list-style: none;
+  }
+  @media (min-width: 480px) {
+    .area-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .area-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.85rem;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--paper-mid);
+    font-weight: 500;
+  }
+  .area-list li svg {
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .area-card {
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 1.5rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .area-card .icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    background: rgba(212, 168, 73, 0.1);
+    border: 1px solid rgba(212, 168, 73, 0.25);
+    display: grid;
+    place-items: center;
+    color: var(--gold-soft);
+  }
+  .area-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--paper);
+    letter-spacing: -0.01em;
+  }
+  .area-card p {
+    font-size: 0.88rem;
+    color: var(--paper-mid);
+    line-height: 1.6;
+  }
+
+  /* =================================================== Emergency CTA */
+  .emergency {
+    background:
+      radial-gradient(ellipse 70% 80% at 0% 50%, rgba(216, 73, 58, 0.18), transparent 60%),
+      radial-gradient(ellipse 60% 80% at 100% 50%, rgba(212, 168, 73, 0.12), transparent 60%),
+      linear-gradient(180deg, var(--ink), #14101a);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .emergency::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, black, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, black, transparent 75%);
+    pointer-events: none;
+  }
+  .emergency-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .emergency-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: rgba(216, 73, 58, 0.12);
+    border: 1px solid rgba(216, 73, 58, 0.35);
+    border-radius: 999px;
+    padding: 0.4rem 0.95rem;
+    margin-bottom: 1.5rem;
+    color: var(--signal-soft);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+  .emergency-eyebrow .pulse-red {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--signal);
+    box-shadow: 0 0 0 0 rgba(216, 73, 58, 0.6);
+    animation: pulse-red 1.6s infinite;
+  }
+  @keyframes pulse-red {
+    0% {
+      box-shadow: 0 0 0 0 rgba(216, 73, 58, 0.6);
+    }
+    70% {
+      box-shadow: 0 0 0 12px rgba(216, 73, 58, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(216, 73, 58, 0);
+    }
+  }
+  .emergency h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+    margin: 0 auto 1rem;
+    max-width: 22ch;
+  }
+  .emergency h2 em {
+    font-style: italic;
+    color: var(--signal-soft);
+    font-weight: 500;
+  }
+  .emergency p {
+    color: var(--paper-mid);
+    font-size: 1.05rem;
+    max-width: 52ch;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+  .btn-emergency {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.4rem 2.2rem;
+    background: linear-gradient(135deg, var(--signal-soft), var(--signal));
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    box-shadow: var(--shadow-signal);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-emergency::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.35) 50%, transparent 65%);
+    transform: translateX(-120%);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-emergency:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 56px -10px rgba(216, 73, 58, 0.55);
+  }
+  .btn-emergency:hover::before {
+    transform: translateX(120%);
+  }
+  .btn-emergency .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+
+  /* ============================================================ Contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+  @media (min-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1.3fr;
+      gap: 4rem;
+    }
+  }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+  }
+  .contact-row .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    background: rgba(212, 168, 73, 0.1);
+    border: 1px solid rgba(212, 168, 73, 0.22);
+    display: grid;
+    place-items: center;
+    color: var(--gold-soft);
+    flex-shrink: 0;
+  }
+  .contact-row .label {
+    font-size: 0.68rem;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+  .contact-row .value {
+    color: var(--paper);
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  .contact-row .value a {
+    color: var(--paper);
+    transition: color 0.2s;
+  }
+  .contact-row .value a:hover {
+    color: var(--gold-soft);
+  }
+  .contact-row .value.phone {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+  }
+  .contact-form {
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 1.85rem;
+    position: relative;
+  }
+  .contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1.85rem;
+    right: 1.85rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 168, 73, 0.35), transparent);
+  }
+  .form-head h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.45rem;
+    color: var(--paper);
+    letter-spacing: -0.012em;
+    margin-bottom: 0.35rem;
+  }
+  .form-head p {
+    color: var(--paper-mid);
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-bottom: 1.1rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+  @media (min-width: 480px) {
+    .form-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .form-group label {
+    font-size: 0.68rem;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-weight: 700;
+  }
+  .form-group input,
+  .form-group textarea {
+    background: var(--ink-2);
+    border: 1px solid var(--border-bright);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--paper);
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: var(--ink);
+    box-shadow: 0 0 0 3px rgba(212, 168, 73, 0.18);
+  }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  .form-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+    color: var(--ink);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-gold);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .form-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 50px -10px rgba(212, 168, 73, 0.5);
+  }
+  .form-fine {
+    text-align: center;
+    color: var(--paper-dim);
+    font-size: 0.72rem;
+    margin-top: 1rem;
+  }
+
+  /* ============================================================ Footer */
+  footer {
+    background: var(--ink-2);
+    border-top: 1px solid var(--border);
+    padding: 3rem 0 5rem;
+    text-align: center;
+  }
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .footer-line {
+    color: var(--paper-mid);
+    font-size: 0.92rem;
+    margin-bottom: 0.45rem;
+  }
+  .footer-line a {
+    color: var(--gold-soft);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    transition: color 0.2s;
+  }
+  .footer-line a:hover {
+    color: var(--gold-bright);
+  }
+  .footer-fine {
+    color: var(--paper-dim);
+    font-size: 0.78rem;
+    margin-top: 1.25rem;
+  }
+  .footer-area {
+    color: var(--paper-mid);
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+  }
+
+  /* ===================================================== Mobile sticky */
+  .mobile-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(10, 18, 32, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid var(--border-bright);
+    border-radius: 999px;
+    z-index: 40;
+    box-shadow: 0 24px 50px -16px rgba(0, 0, 0, 0.7);
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0));
+  }
+  @media (min-width: 768px) {
+    .mobile-cta {
+      display: none;
+    }
+  }
+  .mobile-cta a {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: transform 0.18s;
+  }
+  .mobile-cta a:active {
+    transform: scale(0.97);
+  }
+  .mobile-cta .call {
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+    color: var(--ink);
+    box-shadow: 0 6px 18px -6px rgba(212, 168, 73, 0.55);
+  }
+  .mobile-cta .text {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-bright);
+    color: var(--paper);
+  }
+
+  body {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0));
+  }
+  @media (min-width: 768px) {
+    body {
+      padding-bottom: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================ EMERGENCY MARQUEE ============================ -->
+<div class="banner" role="alert" aria-label="Emergency contact">
+  <div class="banner-track" id="bannerTrack">
+    <span class="banner-item">
+      <span class="dot" aria-hidden="true"></span>
+      Burst pipe? Backed up drain? We answer the phone.
+      <a href="tel:+13465130959">(346) 513-0959</a>
+    </span>
+    <span class="banner-item">
+      <span class="dot" aria-hidden="true"></span>
+      Burst pipe? Backed up drain? We answer the phone.
+      <a href="tel:+13465130959">(346) 513-0959</a>
+    </span>
+    <span class="banner-item">
+      <span class="dot" aria-hidden="true"></span>
+      Burst pipe? Backed up drain? We answer the phone.
+      <a href="tel:+13465130959">(346) 513-0959</a>
+    </span>
+    <span class="banner-item">
+      <span class="dot" aria-hidden="true"></span>
+      Burst pipe? Backed up drain? We answer the phone.
+      <a href="tel:+13465130959">(346) 513-0959</a>
+    </span>
+  </div>
+</div>
+
+<!-- =================================== NAV =================================== -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Kingdom Plumbing home">
+      <span class="brand-mark" aria-hidden="true">K</span>
+      <span class="brand-text">
+        <span class="brand-name">Kingdom Plumbing</span>
+        <span class="brand-sub">Cypress, TX</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#area">Service Area</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+13465130959" aria-label="Call (346) 513-0959">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+      </svg>
+      <span class="nav-cta-num">(346) 513-0959</span>
+      <span class="nav-cta-call">Call Now</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ================================== HERO ================================== -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-text reveal">
+      <div class="trust-pill">
+        <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        5.0 stars
+        <span class="sep">|</span>
+        12 Google reviews
+        <span class="sep">|</span>
+        Cypress, TX
+      </div>
+      <h1>
+        Fast, honest plumbing
+        <em>you can rely on.</em>
+      </h1>
+      <p class="hero-sub">
+        Kingdom Plumbing is a locally owned Cypress plumbing company. Licensed, insured, and trusted by neighbors across the community. We answer the phone, show up on time, and tell you the price before we start.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="tel:+13465130959">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          Call (346) 513-0959
+        </a>
+        <a class="btn-outline" href="#services">
+          See services
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </div>
+      <div class="trust-badges">
+        <div class="badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <polyline points="9 12 11 14 15 10" />
+          </svg>
+          Licensed and Insured
+        </div>
+        <div class="badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          Fast Response
+        </div>
+        <div class="badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="12" y1="1" x2="12" y2="23" />
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
+          Upfront Pricing
+        </div>
+        <div class="badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26" />
+          </svg>
+          Satisfaction Guaranteed
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo reveal">
+      <img
+        src="https://images.pexels.com/photos/8486974/pexels-photo-8486974.jpeg?auto=compress&cs=tinysrgb&w=900"
+        alt="Professional plumber working on copper pipes"
+        loading="eager"
+      />
+      <div class="photo-tag">
+        <span class="pulse" aria-hidden="true"></span>
+        <div class="photo-tag-text">
+          Open until 6 PM today
+          <small>Same day service available</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SERVICES ============================== -->
+<section id="services">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">What We Fix</div>
+      <h2 class="sec-h2">Plumbing services for <em>every</em> home and small business.</h2>
+      <p class="sec-sub">From a leaky faucet to a full water heater install, we handle it cleanly, quickly, and with the price quoted before any wrench turns.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2v6" />
+            <path d="M5 8h14" />
+            <path d="M7 8v8a5 5 0 0 0 10 0V8" />
+            <circle cx="12" cy="20" r="2" />
+          </svg>
+        </div>
+        <h3>Faucet Installation</h3>
+        <p>Kitchen, bath, or utility. New build or replacement. Clean install, no leaks.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+          </svg>
+        </div>
+        <h3>Faucet Repair</h3>
+        <p>Drips, low pressure, hot or cold not working. Repaired the same day in most cases.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </div>
+        <h3>Leak Detection</h3>
+        <p>Hidden leaks behind walls, under slabs, or in your yard. Found without tearing your home apart.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12h6l3 -8 3 8h6" />
+            <path d="M3 12v8h18v-8" />
+          </svg>
+        </div>
+        <h3>Pipe Repair</h3>
+        <p>Burst pipes, slow leaks, corrosion, freeze damage. Repaired or replaced to code.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="4" y="3" width="16" height="18" rx="2" />
+            <circle cx="12" cy="9" r="2" />
+            <path d="M9 16h6" />
+          </svg>
+        </div>
+        <h3>Shower Installation</h3>
+        <p>New shower, tub conversion, or full bath remodel. We do the rough plumbing right.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="6" y="2" width="12" height="14" rx="2" />
+            <path d="M8 16v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4" />
+            <line x1="12" y1="6" x2="12" y2="10" />
+          </svg>
+        </div>
+        <h3>Toilet Installation</h3>
+        <p>Standard, comfort height, or smart toilets. Removed and installed in under two hours.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 7h18l-1.5 12a2 2 0 0 1-2 1.8H6.5a2 2 0 0 1-2-1.8z" />
+            <path d="M9 7V4a3 3 0 0 1 6 0v3" />
+          </svg>
+        </div>
+        <h3>Toilet Repair</h3>
+        <p>Running, clogged, leaking, rocking, or weak flush. Fixed without replacing the whole unit.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <path d="M9 13c1.5 0 1.5 -2 3 -2s1.5 2 3 2" />
+            <path d="M9 17c1.5 0 1.5 -2 3 -2s1.5 2 3 2" />
+          </svg>
+        </div>
+        <h3>Water Heater Installation</h3>
+        <p>Tank or tankless. Gas, electric, or hybrid. Hauled out the old one, in with the new.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =============================== ABOUT =============================== -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-photo reveal">
+      <img
+        src="https://images.pexels.com/photos/8486991/pexels-photo-8486991.jpeg?auto=compress&cs=tinysrgb&w=900"
+        alt="Plumber inspecting a residential water line"
+        loading="lazy"
+      />
+      <div class="est">Cypress, TX</div>
+    </div>
+    <div class="about-text reveal">
+      <div class="sec-eyebrow">About Kingdom</div>
+      <h2 class="sec-h2">Locally owned. <em>Cypress trusted.</em></h2>
+      <p>
+        Kingdom Plumbing is a small, locally owned plumbing company based right here in Cypress. We are not a national chain, not a call center, not a dispatcher who hands you off to whoever is closest. When you call, you reach the people who do the work.
+      </p>
+      <p>
+        Our customers tell us the same thing over and over again. We <em>show up on time</em>, we tell you the price before we start, we treat your home like ours, and we leave the job site clean. That is not a marketing line. It is the reason 12 neighbors have given us a perfect 5.0 star average on Google.
+      </p>
+      <p>
+        Whether it is an emergency at midnight or a kitchen remodel scheduled for next week, we bring the same standard to every visit. <em>Professional, reliable, and straight with you</em> about what your home needs.
+      </p>
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="about-stat-num">5.0</div>
+          <div class="about-stat-label">Star Rating</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">12</div>
+          <div class="about-stat-label">Google Reviews</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">100%</div>
+          <div class="about-stat-label">Local to Cypress</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== REVIEWS ============================== -->
+<section id="reviews">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">What Our Customers Say</div>
+      <h2 class="sec-h2">A perfect <em>5.0</em> star average on Google.</h2>
+      <div class="reviews-meta">
+        <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span><span class="num">5.0</span> based on <span class="num">12</span> Google reviews</span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-quote">Kingdom Plumbing came through right on time. They were professional, fast, and explained everything clearly. The work was solid, and they left everything clean when they finished.</p>
+        <div class="review-author">
+          <div class="review-avatar" aria-hidden="true">A</div>
+          <div>
+            <div class="review-name">Adrianna C.</div>
+            <div class="review-meta">Verified Google review</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-quote">We have used Daniel with Kingdom Plumbing twice now. He is always courteous and gives us options when he can. We would make him our first call every time for plumbing needs.</p>
+        <div class="review-author">
+          <div class="review-avatar" aria-hidden="true">S</div>
+          <div>
+            <div class="review-name">Sherri B.</div>
+            <div class="review-meta">Verified Google review</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-quote">The service call went very well. The technician was punctual, courteous, knowledgeable, and tidy. My leak was repaired in a timely fashion.</p>
+        <div class="review-author">
+          <div class="review-avatar" aria-hidden="true">M</div>
+          <div>
+            <div class="review-name">Mack O.</div>
+            <div class="review-meta">Verified Google review</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== SERVICE AREA =========================== -->
+<section id="area">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">Where We Work</div>
+      <h2 class="sec-h2">Serving Cypress and <em>surrounding</em> areas.</h2>
+      <p class="sec-sub">Based in Cypress with quick service to neighborhoods across Northwest Houston. Not sure if you are in the area? Call and we will tell you straight.</p>
+    </div>
+    <div class="area-grid">
+      <ul class="area-list reveal">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Cypress
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Tomball
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Spring
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Katy
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Jersey Village
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Hockley
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Bridgeland
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Copperfield
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Northwest Houston
+        </li>
+      </ul>
+      <div class="area-card reveal">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        </div>
+        <h3>Open today until 6 PM</h3>
+        <p>Most calls answered within minutes. After hours, leave a message and we will call you right back.</p>
+        <a class="btn-outline" href="tel:+13465130959" style="align-self: flex-start; margin-top: 0.5rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          (346) 513-0959
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== EMERGENCY CTA =========================== -->
+<section class="emergency">
+  <div class="container emergency-inner reveal">
+    <div class="emergency-eyebrow">
+      <span class="pulse-red" aria-hidden="true"></span>
+      Plumbing Emergency
+    </div>
+    <h2>When water is where it shouldn't be, <em>call us first</em>.</h2>
+    <p>Burst pipe at midnight? Hot water cut out before a busy morning? Slab leak? Sewage backup? Our line is open and we will be there fast.</p>
+    <a class="btn-emergency" href="tel:+13465130959">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+      </svg>
+      Call <span class="num">(346) 513-0959</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">Get In Touch</div>
+      <h2 class="sec-h2">Request <em>service</em>.</h2>
+      <p class="sec-sub">Call for the fastest response. Or fill out the form and we will follow up within the hour during business hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-row">
+          <div class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </div>
+          <div>
+            <div class="label">Phone</div>
+            <div class="value phone"><a href="tel:+13465130959">(346) 513-0959</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div>
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:info@kingdomplumbing.com">info@kingdomplumbing.com</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div>
+            <div class="label">Hours</div>
+            <div class="value">Open today until 6 PM</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div>
+            <div class="label">Service Area</div>
+            <div class="value">Cypress, TX and surrounding Northwest Houston neighborhoods</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" action="https://formspree.io/f/DEMO" method="POST" novalidate>
+        <div class="form-head">
+          <h3>Tell us about the job</h3>
+          <p>Quick details get a quicker quote. We will follow up by phone or email.</p>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(346) 000-0000" required autocomplete="tel" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@yourdomain.com" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="message">What do you need?</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us what is going on. The more detail, the faster we can quote." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+        <p class="form-fine">By submitting you agree to be contacted about your job. No spam, ever.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =============================== FOOTER =============================== -->
+<footer>
+  <div class="container">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">K</span>
+      <span class="brand-text">
+        <span class="brand-name">Kingdom Plumbing</span>
+        <span class="brand-sub">Cypress, TX</span>
+      </span>
+    </div>
+    <p class="footer-line">Kingdom Plumbing LLC</p>
+    <p class="footer-line"><a href="tel:+13465130959">(346) 513-0959</a></p>
+    <p class="footer-area">Serving Cypress and Northwest Houston, Texas</p>
+    <p class="footer-fine">&copy; 2025 Kingdom Plumbing LLC. All rights reserved. Licensed and insured.</p>
+  </div>
+</footer>
+
+<!-- =========================== MOBILE STICKY CTA =========================== -->
+<div class="mobile-cta" role="region" aria-label="Quick contact">
+  <a class="call" href="tel:+13465130959">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+    Call Now
+  </a>
+  <a class="text" href="sms:+13465130959">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+    Text Us
+  </a>
+</div>
+
+<script>
+  // Sticky nav scroll state
+  (function () {
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    var onScroll = function () {
+      if (window.scrollY > 24) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Reveal on scroll via IntersectionObserver
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
